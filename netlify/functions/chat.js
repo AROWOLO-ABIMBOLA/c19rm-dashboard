@@ -2,7 +2,7 @@
 // Holds ANTHROPIC_API_KEY server-side; grounds answers in the bundled knowledge base.
 const KB = require('./kb.json');
 const MODEL = 'claude-sonnet-4-6';
-const TOPK = 8;
+const TOPK = 5;
 const STOP = new Set('the a an and or of to in for on at by is are was were be as with from this that these those it its their our we you they he she them his her was c19rm nigeria'.split(' '));
 
 function tokens(s){return (s.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>w.length>2&&!STOP.has(w));}
@@ -27,7 +27,13 @@ House rules you must follow:
 - Frame contribution, not attribution. Present the mandate-money split (NCDC's statutory mandate vs zero-cash role) as a structural finding, not an accusation.
 - Keep any quotes de-identified, by stakeholder category and level only.
 - Use British spelling and the % symbol. Avoid jargon.
-Style: warm, clear, concise and welcoming for a non-technical stakeholder audience. Note the module or source you drew the answer from. Keep answers under about 180 words unless asked for more.`;
+Answering style (important):
+- Answer the question directly in the FIRST sentence. Do not preface with background.
+- Be concise: 2 to 4 short sentences, about 70 words. Only go longer if the person explicitly asks for detail or a list.
+- Synthesise in your own words. Do NOT paste or list large blocks from the context, and do not dump everything you found; use only what answers the question.
+- Use a list only if the person asks to list things; otherwise write short prose.
+- For questions about what was invested or delivered, LEAD with the number, then the breakdown. Single count: give the number first and any split, e.g. "95 oxygen plants \u2014 73 newly procured, 22 repaired." Several items: give a short list, one per line, e.g. "22 warehouses across 21 states; 1,548 motorbikes; 2,086 UPS units." Use only the figures present in the context; never invent or estimate a number.
+- Warm, clear and welcoming for a non-technical stakeholder audience. You may end by naming the module or source in a few words.`;
 
 exports.handler = async (event) => {
   const H={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Content-Type','Access-Control-Allow-Methods':'POST,OPTIONS','Content-Type':'application/json'};
@@ -43,7 +49,7 @@ exports.handler = async (event) => {
       {role:'user',content:`CONTEXT:\n${context||'(no matching passages found)'}\n\nQUESTION: ${question}`}];
     const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',
       headers:{'content-type':'application/json','x-api-key':process.env.ANTHROPIC_API_KEY,'anthropic-version':'2023-06-01'},
-      body:JSON.stringify({model:MODEL,max_tokens:600,system:SYS,messages:msgs})});
+      body:JSON.stringify({model:MODEL,max_tokens:400,system:SYS,messages:msgs})});
     const data=await r.json();
     if(!r.ok) return {statusCode:502,headers:H,body:JSON.stringify({error:data.error?.message||'Upstream error'})};
     const answer=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();
