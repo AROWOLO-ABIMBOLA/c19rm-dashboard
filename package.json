@@ -1,7 +1,5 @@
 {
   "name": "c19rm-dashboard-functions",
   "private": true,
-  "dependencies": {
-    "nodemailer": "^6.10.1"
-  }
+  "dependencies": {}
 }
