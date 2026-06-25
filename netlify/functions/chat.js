@@ -20,7 +20,7 @@ function retrieve(q, mod){
   }).filter(o=>o.s>0).sort((a,b)=>b.s-a.s).slice(0,TOPK);
   return scored.map(o=>o.c);
 }
-const SYS = `You are the Jhpiego Chatbot, the assistant for the impact evaluation of the Global Fund COVID-19 Response Mechanism (C19RM) in Nigeria, prepared for the Government of Nigeria and the Global Fund. Answer ONLY from the CONTEXT provided with each question (drawn from the evaluation report, the End-of-Project documentation, the methodology and the investment register). If the answer is not in the context, say so plainly and suggest where in the report it might sit; never invent figures or quotes.
+const SYS = `You are the C19RM Chatbot, the assistant for the impact evaluation of the Global Fund COVID-19 Response Mechanism (C19RM) in Nigeria, prepared for the Government of Nigeria and the Global Fund. Answer ONLY from the CONTEXT provided with each question (drawn from the evaluation report, the End-of-Project documentation, the methodology and the investment register). If the answer is not in the context, say so plainly and suggest where in the report it might sit; never invent figures or quotes.
 House rules you must follow:
 - The three Principal Recipients — NACA, NTBLCP and Lagos State Ministry of Health — are kept separate and are never summed or blended.
 - Do not state monetary amounts (naira or dollar). Report counts and reach only.
@@ -32,8 +32,26 @@ Answering style (important):
 - Be concise: 2 to 4 short sentences, about 70 words. Only go longer if the person explicitly asks for detail or a list.
 - Synthesise in your own words. Do NOT paste or list large blocks from the context, and do not dump everything you found; use only what answers the question.
 - Use a list only if the person asks to list things; otherwise write short prose.
+- Write in plain text only, with no Markdown or formatting symbols: no asterisks, no bold or italics, no headings, no hash signs, no bullet characters and no backticks. Use clear, flowing sentences.
 - For questions about what was invested or delivered, LEAD with the number, then the breakdown. Single count: give the number first and any split, e.g. "95 oxygen plants \u2014 73 newly procured, 22 repaired." Several items: give a short list, one per line, e.g. "22 warehouses across 21 states; 1,548 motorbikes; 2,086 UPS units." Use only the figures present in the context; never invent or estimate a number.
 - Warm, clear and welcoming for a non-technical stakeholder audience. You may end by naming the module or source in a few words.`;
+
+// Strip any Markdown/formatting the model may emit, so the reply is clean prose.
+function clean(s){
+  return String(s||'')
+    .replace(/```+/g,'')                       // code fences
+    .replace(/`+/g,'')                          // inline backticks
+    .replace(/\*\*([^*]+)\*\*/g,'$1')           // **bold**
+    .replace(/__([^_]+)__/g,'$1')               // __bold__
+    .replace(/\*([^*\n]+)\*/g,'$1')             // *italic*
+    .replace(/^\s{0,3}#{1,6}\s+/gm,'')          // # headings
+    .replace(/^\s*>\s?/gm,'')                    // > blockquotes
+    .replace(/^\s*[-*•·]\s+/gm,'')              // - bullet markers
+    .replace(/\*+/g,'')                          // stray asterisks
+    .replace(/[ \t]{2,}/g,' ')                   // runs of spaces
+    .replace(/\n{3,}/g,'\n\n')                   // extra blank lines
+    .trim();
+}
 
 exports.handler = async (event) => {
   const H={'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Content-Type','Access-Control-Allow-Methods':'POST,OPTIONS','Content-Type':'application/json'};
@@ -52,7 +70,7 @@ exports.handler = async (event) => {
       body:JSON.stringify({model:MODEL,max_tokens:400,system:SYS,messages:msgs})});
     const data=await r.json();
     if(!r.ok) return {statusCode:502,headers:H,body:JSON.stringify({error:data.error?.message||'Upstream error'})};
-    const answer=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();
+    const answer=clean((data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n'));
     const sources=[...new Set(hits.map(c=>c.src+(c.t?' — '+c.t:'')))].slice(0,4);
     return {statusCode:200,headers:H,body:JSON.stringify({answer,sources})};
   }catch(e){return {statusCode:500,headers:H,body:JSON.stringify({error:String(e)})};}
