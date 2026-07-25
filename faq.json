@@ -1,0 +1,141 @@
+{
+  "version": "0.1-draft",
+  "status": "QUESTIONS DRAFTED - ANSWERS PENDING. Every 'a' field is null. The widget hides any question whose answer is null, so this file is safe to deploy as-is: the FAQ layer simply stays dormant until answers are filled in and signed off.",
+  "signoff": {
+    "required": true,
+    "note": "No answer goes live until reviewed. Answers must be drawn from kb.json, not written from memory. Mark money_flag true on any answer stating a naira or dollar figure so the house rule can be applied consistently."
+  },
+  "groups": [
+    { "id": "detect",   "label": "Detect & confirm",      "mods": ["D02", "D01"] },
+    { "id": "treat",    "label": "Treat & protect",       "mods": ["D04", "D08", "D10"] },
+    { "id": "supply",   "label": "Supply & information",  "mods": ["D05", "D09"] },
+    { "id": "sustain",  "label": "Coordinate & sustain",  "mods": ["D06", "D03", "D12", "D13"] }
+  ],
+  "overall": {
+    "label": "Across the whole programme",
+    "q": [
+      { "id": "ALL-1", "q": "What was C19RM, and what did it fund in Nigeria?", "a": null, "money_flag": false },
+      { "id": "ALL-2", "q": "How far did it reach across the country?", "a": null, "money_flag": false },
+      { "id": "ALL-3", "q": "What does the evaluation conclude overall?", "a": null, "money_flag": false },
+      { "id": "ALL-4", "q": "How was the evaluation carried out?", "a": null, "money_flag": false },
+      { "id": "ALL-5", "q": "What happens to these investments now the grant has closed?", "a": null, "money_flag": false }
+    ]
+  },
+  "modules": {
+    "D01": {
+      "label": "Laboratory systems",
+      "q": [
+        { "id": "D01-1", "q": "What laboratory capacity was delivered?", "a": null, "money_flag": false },
+        { "id": "D01-2", "q": "Which laboratories and states did it reach?", "a": null, "money_flag": false },
+        { "id": "D01-3", "q": "What changed in diagnostic capability?", "a": null, "money_flag": false },
+        { "id": "D01-4", "q": "What is the evaluation's verdict on laboratory systems?", "a": null, "money_flag": false },
+        { "id": "D01-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D02": {
+      "label": "Surveillance",
+      "q": [
+        { "id": "D02-1", "q": "What surveillance capacity was delivered?", "a": null, "money_flag": false },
+        { "id": "D02-2", "q": "Which states and levels did it reach?", "a": null, "money_flag": false },
+        { "id": "D02-3", "q": "What changed in early warning and detection?", "a": null, "money_flag": false },
+        { "id": "D02-4", "q": "What is the evaluation's verdict on surveillance?", "a": null, "money_flag": false },
+        { "id": "D02-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D03": {
+      "label": "Risk communication & community systems",
+      "q": [
+        { "id": "D03-1", "q": "What community and RCCE work was delivered?", "a": null, "money_flag": false },
+        { "id": "D03-2", "q": "Which states and communities did it reach?", "a": null, "money_flag": false },
+        { "id": "D03-3", "q": "What did community platforms actually surface?", "a": null, "money_flag": false },
+        { "id": "D03-4", "q": "What is the evaluation's verdict on community systems?", "a": null, "money_flag": false },
+        { "id": "D03-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D04": {
+      "label": "Medical oxygen",
+      "q": [
+        { "id": "D04-1", "q": "What oxygen infrastructure was delivered?", "a": null, "money_flag": false },
+        { "id": "D04-2", "q": "Which states and facilities received oxygen assets?", "a": null, "money_flag": false },
+        { "id": "D04-3", "q": "What difference did it make to patient care?", "a": null, "money_flag": false },
+        { "id": "D04-4", "q": "What is the evaluation's verdict on medical oxygen?", "a": null, "money_flag": false },
+        { "id": "D04-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D05": {
+      "label": "Supply chain & waste management",
+      "q": [
+        { "id": "D05-1", "q": "What supply-chain capacity was delivered?", "a": null, "money_flag": false },
+        { "id": "D05-2", "q": "Which states and warehouses did it reach?", "a": null, "money_flag": false },
+        { "id": "D05-3", "q": "What changed in how health products move?", "a": null, "money_flag": false },
+        { "id": "D05-4", "q": "What is the evaluation's verdict on the supply chain?", "a": null, "money_flag": false },
+        { "id": "D05-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D06": {
+      "label": "Emergency preparedness & response",
+      "q": [
+        { "id": "D06-1", "q": "What emergency-response capacity was delivered?", "a": null, "money_flag": false },
+        { "id": "D06-2", "q": "Which states and operations centres did it reach?", "a": null, "money_flag": false },
+        { "id": "D06-3", "q": "What changed in how outbreaks are coordinated?", "a": null, "money_flag": false },
+        { "id": "D06-4", "q": "What is the evaluation's verdict on preparedness?", "a": null, "money_flag": false },
+        { "id": "D06-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D08": {
+      "label": "Infection prevention & control",
+      "q": [
+        { "id": "D08-1", "q": "What IPC support was delivered?", "a": null, "money_flag": false },
+        { "id": "D08-2", "q": "Which facilities and states did it reach?", "a": null, "money_flag": false },
+        { "id": "D08-3", "q": "What changed in facility safety?", "a": null, "money_flag": false },
+        { "id": "D08-4", "q": "What is the evaluation's verdict on IPC?", "a": null, "money_flag": false },
+        { "id": "D08-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D09": {
+      "label": "HMIS & digital health",
+      "q": [
+        { "id": "D09-1", "q": "What digital and data systems were delivered?", "a": null, "money_flag": false },
+        { "id": "D09-2", "q": "Which states and facilities are covered?", "a": null, "money_flag": false },
+        { "id": "D09-3", "q": "What changed in how data is used for decisions?", "a": null, "money_flag": false },
+        { "id": "D09-4", "q": "What is the evaluation's verdict on digital health?", "a": null, "money_flag": false },
+        { "id": "D09-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D10": {
+      "label": "HIV, TB & malaria continuity",
+      "q": [
+        { "id": "D10-1", "q": "What was done to protect HIV, TB and malaria services?", "a": null, "money_flag": false },
+        { "id": "D10-2", "q": "Which programmes and states did this cover?", "a": null, "money_flag": false },
+        { "id": "D10-3", "q": "Were essential services maintained through the pandemic?", "a": null, "money_flag": false },
+        { "id": "D10-4", "q": "What is the evaluation's verdict on service continuity?", "a": null, "money_flag": false },
+        { "id": "D10-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D12": {
+      "label": "Programme management & governance",
+      "q": [
+        { "id": "D12-1", "q": "How was the programme managed and by whom?", "a": null, "money_flag": false },
+        { "id": "D12-2", "q": "What were the roles of the three Principal Recipients?", "a": null, "money_flag": false },
+        { "id": "D12-3", "q": "What worked and what slowed delivery down?", "a": null, "money_flag": false },
+        { "id": "D12-4", "q": "What is the evaluation's verdict on programme management?", "a": null, "money_flag": false },
+        { "id": "D12-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    },
+    "D13": {
+      "label": "Workforce, quality & catalysed investments",
+      "q": [
+        { "id": "D13-1", "q": "What workforce and quality investment was delivered?", "a": null, "money_flag": false },
+        { "id": "D13-2", "q": "How many health workers were trained, and where?", "a": null, "money_flag": false },
+        { "id": "D13-3", "q": "What changed in quality of care and integration?", "a": null, "money_flag": false },
+        { "id": "D13-4", "q": "What is the evaluation's verdict on this area?", "a": null, "money_flag": false },
+        { "id": "D13-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+      ]
+    }
+  },
+  "open_questions_for_review": [
+    "D11 carries only 4 passages in the knowledge base and is absent from the chapter crosswalk. Confirm whether it is a live dashboard module; if so it needs its own five, if not it should be removed from the module map.",
+    "D07 is absent from the dashboard module dictionary. Confirm this is intentional.",
+    "D03 covers both RCCE and Community Systems, which were separate report chapters sharing one D-code. Five questions may be tight for both; consider splitting if the dashboard treats them separately."
+  ]
+}
