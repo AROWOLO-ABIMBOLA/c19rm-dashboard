@@ -17,7 +17,7 @@ spelling). The answer and its sources come back to the widget.
 **Model:** Claude Sonnet 4.6 (set in `netlify/functions/chat.js`, constant `MODEL`).
 Swap to `claude-haiku-4-5-20251001` to cut cost if volume grows.
 
-**Knowledge base:** `netlify/functions/kb.json` — 527 passages from the End-of-Project
+**Knowledge base:** `netlify/functions/kb.json` — 1,150 passages from the End-of-Project
 Report, the 12-module evaluation, the methodology and the investment register.
 
 ### Deploy on Netlify
@@ -40,10 +40,14 @@ Report, the 12-module evaluation, the methodology and the investment register.
 - For a busy public page, add IP rate-limiting or a Cloudflare Turnstile check.
 
 ### Refreshing the knowledge base
-When the full EOP report or new documents arrive, rebuild `kb.json` (the indexer
-chunks the sources and tags them by module) and redeploy. Nothing else changes.
-Next planned additions: the full EOP report, and the qualitative evidence-bank
-quotes (these live in embedded scripts and need a dedicated extractor).
+When new documents arrive, rebuild `kb.json` (the indexer chunks the sources and
+tags them by module) and redeploy. Nothing else changes.
+
+The full End-of-Project Report is now included, extracted from all eight source PDFs
+— splits 1–8, the last of which carries Part V and the appendices (investment atlas,
+JEE maturity scores, expenditure account, asset inventory, evidence register).
+Still outstanding: the qualitative evidence-bank quotes, which live in embedded
+scripts and need a dedicated extractor.
 
 ---
 
