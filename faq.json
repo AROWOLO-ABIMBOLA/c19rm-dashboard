@@ -1,141 +1,154 @@
 {
-  "version": "0.1-draft",
-  "status": "QUESTIONS DRAFTED - ANSWERS PENDING. Every 'a' field is null. The widget hides any question whose answer is null, so this file is safe to deploy as-is: the FAQ layer simply stays dormant until answers are filled in and signed off.",
-  "signoff": {
-    "required": true,
-    "note": "No answer goes live until reviewed. Answers must be drawn from kb.json, not written from memory. Mark money_flag true on any answer stating a naira or dollar figure so the house rule can be applied consistently."
-  },
+  "version": "1.0-draft-for-signoff",
+  "status": "ALL ANSWERS DRAFTED. Every answer is drawn from kb.json passages, not written from memory. Nothing here has been reviewed by the evaluation team yet. Delete or blank any answer you do not approve - the widget hides questions whose answer is null.",
+  "house_rules_applied": [
+    "No monetary amounts stated, in line with the chat.js system prompt. Counts and reach only.",
+    "The three Principal Recipients are never summed or blended.",
+    "Contribution, not attribution. Figures are the evaluation's own.",
+    "British spelling. Plain text, no markdown."
+  ],
+  "known_discrepancies_for_review": [
+    "Liquid-oxygen tanks: the Impact Evaluation states 12, the EOP appendix states 17. Answers use 12, per the figure previously agreed.",
+    "Community informants: the Impact Evaluation states 6,930, the EOP appendix states 7,035. Answers use 6,930.",
+    "IDSR focal persons: the Impact Evaluation states 40,437 across 419 LGAs, the EOP appendix states 40,491 from 20,783 facilities. Answers use 40,437.",
+    "D11 is used here for the COVID-19 acute response, on the evidence of passage 61. If the dashboard has no D11 domain, delete that block - its content is otherwise unreachable by module."
+  ],
   "groups": [
-    { "id": "detect",   "label": "Detect & confirm",      "mods": ["D02", "D01"] },
-    { "id": "treat",    "label": "Treat & protect",       "mods": ["D04", "D08", "D10"] },
-    { "id": "supply",   "label": "Supply & information",  "mods": ["D05", "D09"] },
-    { "id": "sustain",  "label": "Coordinate & sustain",  "mods": ["D06", "D03", "D12", "D13"] }
+    { "id": "detect",  "label": "Detect & confirm",     "mods": ["D02", "D01"] },
+    { "id": "treat",   "label": "Treat & protect",      "mods": ["D04", "D11", "D08", "D10"] },
+    { "id": "supply",  "label": "Supply & information", "mods": ["D05", "D09"] },
+    { "id": "sustain", "label": "Coordinate & sustain", "mods": ["D06", "D03", "D12", "D13"] }
   ],
   "overall": {
     "label": "Across the whole programme",
     "q": [
-      { "id": "ALL-1", "q": "What was C19RM, and what did it fund in Nigeria?", "a": null, "money_flag": false },
-      { "id": "ALL-2", "q": "How far did it reach across the country?", "a": null, "money_flag": false },
-      { "id": "ALL-3", "q": "What does the evaluation conclude overall?", "a": null, "money_flag": false },
-      { "id": "ALL-4", "q": "How was the evaluation carried out?", "a": null, "money_flag": false },
-      { "id": "ALL-5", "q": "What happens to these investments now the grant has closed?", "a": null, "money_flag": false }
+      { "id": "ALL-1", "q": "What was C19RM, and what did it fund in Nigeria?", "a": "C19RM was the Global Fund's COVID-19 Response Mechanism, running in Nigeria from 2021 to 2026 across all 36 states and the Federal Capital Territory. It funded twelve investment areas: the acute response, medical oxygen, laboratories, surveillance, infection prevention and control, community systems, supply chain and waste, digital health, emergency preparedness, continuity of HIV, TB and malaria services, programme management, and catalysed investments such as quality improvement.", "money_flag": false },
+      { "id": "ALL-2", "q": "How far did it reach across the country?", "a": "Reach was national but uneven by component. SORMAS surveillance and the oxygen plant network covered all 36 states and the FCT. Infection prevention work reached a 566-facility network nationwide, and 157 primary health centres were revitalised across 28 states. Narrower layers include warehouses in 21 states, emergency operations centres optimised in 12 priority states, and community-based surveillance piloted in three.", "money_flag": false },
+      { "id": "ALL-3", "q": "What does the evaluation conclude overall?", "a": "That C19RM did not only respond to COVID-19; it advanced Nigeria's national health-security systems. Oxygen infrastructure, decentralised diagnostics, modernised warehousing, digital surveillance, infection prevention, community platforms and a trained workforce were strengthened in ways that now extend into routine operations. The conclusion is framed as contribution rather than attribution, since C19RM worked alongside government and other funders throughout.", "money_flag": false },
+      { "id": "ALL-4", "q": "How was the evaluation carried out?", "a": "It was a theory-based, mixed-methods evaluation using contribution analysis against the six OECD-DAC criteria, plus two cross-cutting lenses, equity and system risk. Evidence came from site verification, surveys, interviews, observation and document review, triangulated across sources. Ethics approval came from the National Health Research Ethics Committee and the Johns Hopkins Bloomberg School of Public Health IRB. Jhpiego Nigeria conducted it independently.", "money_flag": false },
+      { "id": "ALL-5", "q": "What happens to these investments now the grant has closed?", "a": "The evaluation's central concern is that delivered investments may not be sufficiently institutionalised. Systems weaken quietly after a grant closes: staff transfer, tools fall into disuse, maintenance budgets slip. It recommends a national transition plan assigning a named owner and financing route to each major system, state-level transition plans and preparedness scorecards, and making functionality rather than delivery the headline measure.", "money_flag": false }
     ]
   },
   "modules": {
     "D01": {
       "label": "Laboratory systems",
       "q": [
-        { "id": "D01-1", "q": "What laboratory capacity was delivered?", "a": null, "money_flag": false },
-        { "id": "D01-2", "q": "Which laboratories and states did it reach?", "a": null, "money_flag": false },
-        { "id": "D01-3", "q": "What changed in diagnostic capability?", "a": null, "money_flag": false },
-        { "id": "D01-4", "q": "What is the evaluation's verdict on laboratory systems?", "a": null, "money_flag": false },
-        { "id": "D01-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D01-1", "q": "What laboratory capacity was delivered?", "a": "333 Truenat molecular analysers were deployed to peripheral and secondary sites, alongside GeneXpert optimisation beyond tuberculosis and 370 portable digital X-ray units for TB screening. 55 public-health laboratories were optimised or upgraded, 48 optimised and 7 upgraded, including the Central Public Health Laboratory and six integrated zonal reference laboratories. Quality management systems were implemented across 56 tertiary laboratories.", "money_flag": false },
+        { "id": "D01-2", "q": "Which laboratories and states did it reach?", "a": "Six integrated zonal reference laboratories were established or strengthened: Federal Teaching Hospital Gombe, Aminu Kano Teaching Hospital, Jos University Teaching Hospital, University College Hospital Ibadan, Federal Teaching Hospital Owerri and University of Port Harcourt Teaching Hospital. Whole-genome sequencing capacity sits at NCDC reference laboratories, with a national genomic centre in the FCT and Lagos. Truenat deployment was national.", "money_flag": false },
+        { "id": "D01-3", "q": "What changed in diagnostic capability?", "a": "Molecular testing moved closer to patients, turnaround times fell, and platforms began to be used for multiple diseases rather than one. A national laboratory information layer was established. These gains are convergent across states, but they hold for activated sites rather than the full installed base, since only about half of supported sites were fully operational at the time of assessment.", "money_flag": false },
+        { "id": "D01-4", "q": "What is the evaluation's verdict on laboratory systems?", "a": "C19RM contributed substantially, alongside government and earlier HIV and PEPFAR investment, to decentralising molecular diagnostic capacity, modernising laboratory information systems and establishing advanced genomic capability. The contribution is strongest where deployment came with activation, operational support and integration, and weakest where equipment was installed but never optimised, or where delivery ran ahead of site readiness.", "money_flag": false },
+        { "id": "D01-5", "q": "What is at risk now, and what needs to happen next?", "a": "Four risks: reagents, cartridges and chips are not yet fully funded beyond the grant; zonal laboratory equipping, staffing and commissioning are still in progress; eN-LIS adoption and the translation of genomic results into action are unverified; and workforce retention is uncertain. The evaluation recommends ring-fenced recurrent financing and extended-warranty contracts for advanced platforms before warranties lapse.", "money_flag": false }
       ]
     },
     "D02": {
       "label": "Surveillance",
       "q": [
-        { "id": "D02-1", "q": "What surveillance capacity was delivered?", "a": null, "money_flag": false },
-        { "id": "D02-2", "q": "Which states and levels did it reach?", "a": null, "money_flag": false },
-        { "id": "D02-3", "q": "What changed in early warning and detection?", "a": null, "money_flag": false },
-        { "id": "D02-4", "q": "What is the evaluation's verdict on surveillance?", "a": null, "money_flag": false },
-        { "id": "D02-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D02-1", "q": "What surveillance capacity was delivered?", "a": "SORMAS was rolled out as the national digital reporting backbone, with about 5,700 tablets, devices and accessories and roughly 242,500 IDSR reporting tools. 40,437 staff were trained in Integrated Disease Surveillance and Response across 419 local government areas. Event-based surveillance centres were established in 12 states, and community-based surveillance was piloted with 6,930 community informants.", "money_flag": false },
+        { "id": "D02-2", "q": "Which states and levels did it reach?", "a": "SORMAS reached all 36 states and the FCT, covering tertiary, secondary and selected primary facilities, and expanded supported facilities from 155 in 2020 to more than 3,720. IDSR training covered 20 states and 419 LGAs. Event-based surveillance reached 12 states. Community-based surveillance was piloted in three, Kano, Oyo and Enugu, across 63 LGAs.", "money_flag": false },
+        { "id": "D02-3", "q": "What changed in early warning and detection?", "a": "Surveillance shifted from a facility-heavy, largely paper-based model to a layered early-warning system linking facilities, LGAs, states, community informants and emergency-response structures. Programme records show reporting completeness rising from 71 to 93 per cent and timeliness from 64 to 85 per cent. In the site survey, SORMAS was actively used at 124 of 150 facilities assessed.", "money_flag": false },
+        { "id": "D02-4", "q": "What is the evaluation's verdict on surveillance?", "a": "The clearest contribution was to facility-based digital reporting through SORMAS and IDSR, and it was strongest where both readiness inputs were present, a working tablet and a trained focal person. Maturity was highest for SORMAS and IDSR; event-based, community-based and enhanced surveillance were more varied, reaching fewer states or established later.", "money_flag": false },
+        { "id": "D02-5", "q": "What is at risk now, and what needs to happen next?", "a": "The main threat is the absence of secured domestic financing for recurrent costs: data bundles, airtime, device replacement, supervision, refresher training and workforce retention remain largely donor-financed. 26 of 150 assessed facilities were already inactive. The event-based and community layers in particular need secured subnational financing to become routine national functions rather than project activities.", "money_flag": false }
       ]
     },
     "D03": {
       "label": "Risk communication & community systems",
       "q": [
-        { "id": "D03-1", "q": "What community and RCCE work was delivered?", "a": null, "money_flag": false },
-        { "id": "D03-2", "q": "Which states and communities did it reach?", "a": null, "money_flag": false },
-        { "id": "D03-3", "q": "What did community platforms actually surface?", "a": null, "money_flag": false },
-        { "id": "D03-4", "q": "What is the evaluation's verdict on community systems?", "a": null, "money_flag": false },
-        { "id": "D03-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D03-1", "q": "What community and RCCE work was delivered?", "a": "The investment financed community engagement through three civil-society networks rather than building a parallel system: NEPWHAN for HIV, the TB Network, and ACOMIN for malaria. It supported community-led monitoring, community-based surveillance, social mobilisation and risk communication structures. It strengthened and resourced structures earlier Ebola and Lassa fever responses had already built.", "money_flag": false },
+        { "id": "D03-2", "q": "Which states and communities did it reach?", "a": "Community systems strengthening reached 20 states and the FCT, with coverage distributed across HIV, TB and malaria at local-government level so no single population group was structurally favoured within a covered area. State risk-communication structures were supported in 21 of the 37 jurisdictions. Community-based surveillance ran in Kano, Oyo and Enugu across 63 LGAs.", "money_flag": false },
+        { "id": "D03-3", "q": "What did community platforms actually surface?", "a": "Across the three networks, community-led monitoring identified 18,125 service-delivery and rights issues and resolved 8,450 of them, a resolution rate of 46.6 per cent. Resolution was uneven: NEPWHAN resolved 54.4 per cent of the issues it identified and the TB Network 46.4 per cent. Unresolved issues were escalated to state advocacy teams for collective action.", "money_flag": false },
+        { "id": "D03-4", "q": "What is the evaluation's verdict on community systems?", "a": "The investment strengthened accountability rather than creating new structures. A site-level counterfactual test asked committee members and community monitors what the situation would look like without it, and the coded responses support the contribution claim. The clearest documented change is the accountability change, with community feedback reaching formal systems and being followed to resolution.", "money_flag": false },
+        { "id": "D03-5", "q": "What is at risk now, and what needs to happen next?", "a": "This is the most exposed area. Activities depending on stipends, transport, airtime and case-management support were the first to reduce once external funding declined. Large-scale mobilisation and the gender-based-violence case-manager network have already lapsed. The evaluation recommends community systems be protected as a first-line preparedness mechanism, linked to facility, local-government and state review with clear escalation routes.", "money_flag": false }
       ]
     },
     "D04": {
       "label": "Medical oxygen",
       "q": [
-        { "id": "D04-1", "q": "What oxygen infrastructure was delivered?", "a": null, "money_flag": false },
-        { "id": "D04-2", "q": "Which states and facilities received oxygen assets?", "a": null, "money_flag": false },
-        { "id": "D04-3", "q": "What difference did it make to patient care?", "a": null, "money_flag": false },
-        { "id": "D04-4", "q": "What is the evaluation's verdict on medical oxygen?", "a": null, "money_flag": false },
-        { "id": "D04-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D04-1", "q": "What oxygen infrastructure was delivered?", "a": "95 pressure swing adsorption plants, comprising 73 newly installed and 22 rehabilitated, against roughly 45 that existed before C19RM. Of the 73 new plants, 63 came through the Global Fund WAMBO platform and 10 were procured locally. Also delivered: 12 liquid-oxygen tanks, 21,291 cylinders, 2,086 concentrators, and piped oxygen to more than 4,000 bed points.", "money_flag": false },
+        { "id": "D04-2", "q": "Which states and facilities received oxygen assets?", "a": "The 63 WAMBO-supported plants were distributed across all 36 states and the FCT to extend production nationally, and most states received at least one. The Oxygen Piping Expansion Project reached 44 tertiary facilities. First-tranche plants were assessed in Abia, Anambra, Adamawa, Kaduna, Katsina, Yobe, Cross River, Delta, Ondo and Oyo.", "money_flag": false },
+        { "id": "D04-3", "q": "What difference did it make to patient care?", "a": "The delivery chain was functional across most assessed components: liquid-oxygen tanks 92 per cent in service, piped oxygen 91 per cent working, PSA plants 83 per cent functional and pulse oximeters 82 per cent in use. The evaluation is careful here: this is system-level readiness. Patient-level outcomes such as hypoxaemia correction and mortality need follow-on analysis and are not yet demonstrated.", "money_flag": false },
+        { "id": "D04-4", "q": "What is the evaluation's verdict on medical oxygen?", "a": "C19RM substantially expanded Nigeria's oxygen infrastructure and addressed a structural gap that pre-dated the pandemic, when the system was fragmented and heavily dependent on commercial cylinders. The claim remains contributory rather than attributive, because the scale-up was co-financed and co-delivered, and population-level mortality effects are plausible but not demonstrated.", "money_flag": false },
+        { "id": "D04-5", "q": "What is at risk now, and what needs to happen next?", "a": "Maintenance and spare parts. 16 of the 95 plants, 17 per cent, were non-functional, driven by broken parts, uncommissioned units and missing service contracts. Functionality differs significantly by zone and is lowest in the North East at 56 per cent. Plants also depend on reliable power, backup supply, chillers and water. The next measure should be uptime, not installation.", "money_flag": false }
       ]
     },
     "D05": {
       "label": "Supply chain & waste management",
       "q": [
-        { "id": "D05-1", "q": "What supply-chain capacity was delivered?", "a": null, "money_flag": false },
-        { "id": "D05-2", "q": "Which states and warehouses did it reach?", "a": null, "money_flag": false },
-        { "id": "D05-3", "q": "What changed in how health products move?", "a": null, "money_flag": false },
-        { "id": "D05-4", "q": "What is the evaluation's verdict on the supply chain?", "a": null, "money_flag": false },
-        { "id": "D05-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D05-1", "q": "What supply-chain capacity was delivered?", "a": "22 pharmaceutical-grade warehouses across 21 states, plus the expanded Abuja Premier Medical Warehouse with end-to-end logistics visibility. A warehouse information system went live in 21 states, with a logistics pilot in two. The national waste policy was revised, waste management was assessed in 12 states and the FCT, and 120.6 tonnes of waste were destroyed.", "money_flag": false },
+        { "id": "D05-2", "q": "Which states and warehouses did it reach?", "a": "Warehouses were built or upgraded in 21 states. 16 states are still without one, which the evaluation treats as a structural inequity rather than a gap in delivery. Handover is real: 20 of the 22 state warehouses are now run by state governments, one of the clearest domestic-ownership pathways anywhere in the portfolio.", "money_flag": false },
+        { "id": "D05-3", "q": "What changed in how health products move?", "a": "Routine logistics visibility was strengthened through NHLMIS, NAVISION and logistics-provider arrangements, and last-mile continuity held through lockdown. The gain did not extend to the emergency COVID commodity line, which was managed separately and is where the efficiency loss concentrates. Antigen rapid tests were procured almost two years before implementation began, and some expired before use.", "money_flag": false },
+        { "id": "D05-4", "q": "What is the evaluation's verdict on the supply chain?", "a": "A material contribution to stronger infrastructure and routine logistics visibility. The strongest evidence sits on the routine public-health lines: operational warehouses, improved visibility, last-mile continuity through lockdown, and an institutionalised drug-management-agency model. Residual risks concentrate at the emergency-commodity and waste-treatment ends, and in the 16 states without a warehouse.", "money_flag": false },
+        { "id": "D05-5", "q": "What is at risk now, and what needs to happen next?", "a": "Much of the state warehouse network was handed over recently, so the full picture is not yet visible. Ownership transition is not the same as recurrent financing: a state assuming a warehouse does not mean a budget line is meeting its running costs. Waste treatment remains incomplete, with many facilities still using open burning, constrained by inter-agency coordination rather than facility practice.", "money_flag": false }
       ]
     },
     "D06": {
       "label": "Emergency preparedness & response",
       "q": [
-        { "id": "D06-1", "q": "What emergency-response capacity was delivered?", "a": null, "money_flag": false },
-        { "id": "D06-2", "q": "Which states and operations centres did it reach?", "a": null, "money_flag": false },
-        { "id": "D06-3", "q": "What changed in how outbreaks are coordinated?", "a": null, "money_flag": false },
-        { "id": "D06-4", "q": "What is the evaluation's verdict on preparedness?", "a": null, "money_flag": false },
-        { "id": "D06-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D06-1", "q": "What emergency-response capacity was delivered?", "a": "Public Health Emergency Operations Centres were optimised in 12 priority states, and 480 responders were trained in public-health emergency management across 24 states and the FCT, covering all six zones. Emergency operations IT support reached 25 states. The investment worked through Nigeria's existing structures, PHEOCs, the incident-management system and rapid-response teams, rather than a parallel one.", "money_flag": false },
+        { "id": "D06-2", "q": "Which states and operations centres did it reach?", "a": "Two footprints, one deep and one wide. The optimisation footprint covered 12 priority states receiving infrastructure and operational support. The training footprint was broader, reaching 480 participants across 24 states and the FCT in all six geopolitical zones. Emergency operations staff were trained in 25 states.", "money_flag": false },
+        { "id": "D06-3", "q": "What changed in how outbreaks are coordinated?", "a": "PHEOCs became functional emergency systems rather than rooms with equipment. Event-based surveillance was integrated into PHEOC workflows, strengthening the pathway from signal notification through verification to response, and linking surveillance units, laboratories, rapid-response teams and epidemic-intelligence structures. The resulting coordination layer has already been reused for outbreaks beyond COVID-19.", "money_flag": false },
+        { "id": "D06-4", "q": "What is the evaluation's verdict on preparedness?", "a": "On the balance of evidence, C19RM made a material but not exclusive contribution to Nigeria's emergency-response capability. The strongest evidence is at system-capacity level: 30 of 32 assessed PHEOCs were functional and used routinely. Improvements in external health-security benchmarks are read as one contribution among several rather than as C19RM's alone.", "money_flag": false },
+        { "id": "D06-5", "q": "What is at risk now, and what needs to happen next?", "a": "Centres must stay operational rather than symbolic. Without dedicated state financing for staffing, connectivity, power and ICT, optimised centres can gradually lose functionality between emergencies. The evaluation points to states running their own refresher training and simulation exercises, financed domestically, as what sustaining the gains actually looks like in practice.", "money_flag": false }
       ]
     },
     "D08": {
       "label": "Infection prevention & control",
       "q": [
-        { "id": "D08-1", "q": "What IPC support was delivered?", "a": null, "money_flag": false },
-        { "id": "D08-2", "q": "Which facilities and states did it reach?", "a": null, "money_flag": false },
-        { "id": "D08-3", "q": "What changed in facility safety?", "a": null, "money_flag": false },
-        { "id": "D08-4", "q": "What is the evaluation's verdict on IPC?", "a": null, "money_flag": false },
-        { "id": "D08-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D08-1", "q": "What IPC support was delivered?", "a": "IPC reached a 566-facility network across all 36 states and the FCT. It ran in two phases: an emergency phase supplying isolation supplies, triage set-up and rapid training cascades, then a structured phase targeting the built environment. 157 primary health centres were revitalised, including water, power, sterilisation and waste utilities. A National IPC Technical Working Group was established.", "money_flag": false },
+        { "id": "D08-2", "q": "Which facilities and states did it reach?", "a": "The facility network spanned all 36 states and the FCT. The 157 revitalised primary health centres were spread across 28 states and 139 local government areas, delivered in two phases, 80 facilities in the first and 77 in the second. Structural IPC components were present in most assessed sites, with the National Technical Working Group operating on quarterly governance.", "money_flag": false },
+        { "id": "D08-3", "q": "What changed in facility safety?", "a": "Nigeria's IPC score on the WHO self-assessment rose from 33 in 2022 to 60 in 2025, a 27-point gain including 13 points between 2024 and 2025. Infection prevention became more firmly established as a facility-safety and service-continuity function rather than an emergency add-on. Nigeria's first national healthcare-associated infection point-prevalence survey was conducted.", "money_flag": false },
+        { "id": "D08-4", "q": "What is the evaluation's verdict on IPC?", "a": "Attribution is partial and concurrent partners are acknowledged. Of 184 valid site responses, at least 88 per cent judged the situation would be worse or much worse without the investment. The primary evidence gap is the incomplete follow-up assessment, missing in 33 of the 36 states, which limits how firmly the improvement can be measured.", "money_flag": false },
+        { "id": "D08-5", "q": "What is at risk now, and what needs to happen next?", "a": "The clearest risk is the unpaid, off-budget IPC focal-person model: the role has no salary or budget line. Healthcare-associated infection surveillance showed promise but remains at an early stage. Emergency commodities alone were not enough; sustained capacity requires training, governance, assessment tools and surveillance. The evaluation calls for IPC data to return to facilities through timely dashboards and feedback loops.", "money_flag": false }
       ]
     },
     "D09": {
       "label": "HMIS & digital health",
       "q": [
-        { "id": "D09-1", "q": "What digital and data systems were delivered?", "a": null, "money_flag": false },
-        { "id": "D09-2", "q": "Which states and facilities are covered?", "a": null, "money_flag": false },
-        { "id": "D09-3", "q": "What changed in how data is used for decisions?", "a": null, "money_flag": false },
-        { "id": "D09-4", "q": "What is the evaluation's verdict on digital health?", "a": null, "money_flag": false },
-        { "id": "D09-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D09-1", "q": "What digital and data systems were delivered?", "a": "About 12,000 e-reporting and electronic-medical-record tablets plus 3,000 Android HMIS tablets, with DHIS2 Android reporting, NHMIS tools and server support. Also delivered: 435 NAFDAC barcode scanners linked to digital health records, an OpenMRS electronic-medical-record pilot at three primary health centres in the FCT, and laboratory information support to Lagos State biosafety laboratories.", "money_flag": false },
+        { "id": "D09-2", "q": "Which states and facilities are covered?", "a": "The investment worked through national platforms, DHIS2, the National Data Repository, NHMIS and SORMAS, rather than a parallel donor system. Among assessed sites, 68 of 92 electronic and digital sites were actively used, and 124 of 150 SORMAS and IDSR sites. Targeted support went to five weaker-reporting states.", "money_flag": false },
+        { "id": "D09-3", "q": "What changed in how data is used for decisions?", "a": "The move from paper to digital facility reporting was achieved and widely felt. Reporting timeliness improved at 85 of 92 assessed digital sites. In five states selected for focused NHMIS training, reporting rate and timeliness rose from below 40 per cent to about 90 per cent. Evidence that data is used for decisions, as opposed to reported, remains limited.", "money_flag": false },
+        { "id": "D09-4", "q": "What is the evaluation's verdict on digital health?", "a": "A material but not exclusive contribution to faster, more visible facility reporting. The strongest gains are the shift to electronic reporting and improved timeliness and completeness. The main limitation is that the technical link between systems was built but routine data exchange is not yet operating, so data does not yet flow between surveillance and routine systems.", "money_flag": false },
+        { "id": "D09-5", "q": "What is at risk now, and what needs to happen next?", "a": "Device replacement, hosting, connectivity, licences, technical support and staff succession all need dedicated funding and documented handover plans. Running costs are already about two-thirds domestic at sites reporting, which is encouraging, but device replacement and workforce continuity are the named threats. A formal SORMAS to DHIS2 integration plan is recommended.", "money_flag": false }
       ]
     },
     "D10": {
       "label": "HIV, TB & malaria continuity",
       "q": [
-        { "id": "D10-1", "q": "What was done to protect HIV, TB and malaria services?", "a": null, "money_flag": false },
-        { "id": "D10-2", "q": "Which programmes and states did this cover?", "a": null, "money_flag": false },
-        { "id": "D10-3", "q": "Were essential services maintained through the pandemic?", "a": null, "money_flag": false },
-        { "id": "D10-4", "q": "What is the evaluation's verdict on service continuity?", "a": null, "money_flag": false },
-        { "id": "D10-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D10-1", "q": "What was done to protect HIV, TB and malaria services?", "a": "The investment funded commodities, service-delivery adaptations, digital case-management tools and campaign adaptations designed to keep the three programmes running through pandemic disruption. It optimised 396 GeneXpert laboratories for multi-disease use, established ECHO video-conferencing centres for supervision and peer learning, and supported situation rooms for real-time data visualisation.", "money_flag": false },
+        { "id": "D10-2", "q": "Which programmes and states did this cover?", "a": "All three disease programmes nationally, through the Principal Recipient system. ECHO centres were established in Anambra and Ebonyi, where situation rooms improved real-time data visualisation at local-government and facility level. Seasonal malaria chemoprevention reached more than six million children across eight states, with 652 personnel trained in digital campaign tools.", "money_flag": false },
+        { "id": "D10-3", "q": "Were essential services maintained through the pandemic?", "a": "Largely yes. Services were reported as maintained or rapidly recovered at 174 of 190 assessed facilities, 91.6 per cent. By programme, HIV services held at 94.8 per cent of facilities and tuberculosis at 88.7 per cent, with malaria comparable. The evaluation notes services were protected at similar rates across the three programmes rather than one being favoured.", "money_flag": false },
+        { "id": "D10-4", "q": "What is the evaluation's verdict on service continuity?", "a": "C19RM contributed substantially, alongside government and other funders, to reducing COVID-era disruption across the three programmes, and accelerated a durable shift toward differentiated, community-based and digitally enabled delivery. The clearest gains are continuity, breadth of reported service improvement and structural integration of the three programmes.", "money_flag": false },
+        { "id": "D10-5", "q": "What is at risk now, and what needs to happen next?", "a": "Two weak links. Equity: lockdown enforcement inflicted rights violations on key populations, and civil society was excluded from early planning. Financing: residual risk is structural, compounded by commodity stockouts and workforce attrition, and escalates unless a costed domestic plan is in place. Reported continuity was also lowest in the southern zones, a pattern needing verification in a larger sample.", "money_flag": false }
+      ]
+    },
+    "D11": {
+      "label": "COVID-19 acute response",
+      "q": [
+        { "id": "D11-1", "q": "What was delivered for the acute COVID-19 response?", "a": "More than 8 million antigen rapid diagnostic tests, together with PCR reagents, extraction kits and laboratory consumables. More than 11.5 million items of personal protective equipment, with isolation supplies and triage-area set-up. 16 advanced ambulances. Case-management equipment including ECG machines, infusion pumps, monitors, blood-gas analysers, defibrillators, ultrasound, X-ray and freezers.", "money_flag": false },
+        { "id": "D11-2", "q": "Where did the acute-response investment reach?", "a": "Case-management equipment was distributed across all 36 states and the FCT. The 16 advanced ambulances went to Oyo, Kano and Jigawa. Isolation centres, triage areas and testing scale-up were supported nationally through the Principal Recipient system during the emergency phase of the response.", "money_flag": false },
+        { "id": "D11-3", "q": "What difference did the acute response make?", "a": "It addressed a documented acute-response capacity gap and supported the rapid establishment of isolation and treatment capability at a point when Nigeria's testing, case-management and protective-equipment capacity was insufficient for the scale and speed of the threat. The evaluation assesses isolation-centre indicators at site level, several of which are not statistically distinguishable from one another.", "money_flag": false },
+        { "id": "D11-4", "q": "What is the evaluation's verdict on the acute response?", "a": "C19RM substantially strengthened emergency-response capability during the pandemic and generated durable system capacities, but sustainability varies considerably across investment types because transition financing and maintenance mechanisms were largely not designed in. The most enduring assets are those that were not COVID-specific by design: the ambulances, the trained workforce and the coordination models.", "money_flag": false },
+        { "id": "D11-5", "q": "What is at risk now, and what needs to happen next?", "a": "COVID-specific assets are the most exposed, because the need they were bought for has receded while the maintenance and financing arrangements were never designed in. The lesson the evaluation draws is that emergency commodities require follow-on systems investment: protective equipment and consumables supported the response, but sustained capacity needed training, governance, assessment tools and surveillance to go with them.", "money_flag": false }
       ]
     },
     "D12": {
       "label": "Programme management & governance",
       "q": [
-        { "id": "D12-1", "q": "How was the programme managed and by whom?", "a": null, "money_flag": false },
-        { "id": "D12-2", "q": "What were the roles of the three Principal Recipients?", "a": null, "money_flag": false },
-        { "id": "D12-3", "q": "What worked and what slowed delivery down?", "a": null, "money_flag": false },
-        { "id": "D12-4", "q": "What is the evaluation's verdict on programme management?", "a": null, "money_flag": false },
-        { "id": "D12-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D12-1", "q": "How was the programme managed, and by whom?", "a": "Three Principal Recipients held the grant: the National Agency for the Control of AIDS, the National Tuberculosis and Leprosy Control Programme, and the Lagos State Ministry of Health. Delivery ran through Nigerian institutions rather than around them, including NCDC, Federal Ministry of Health departments, NMEP, NASCP, NPHCDA, NPSCMP, State Ministries of Health, civil-society networks and facility teams.", "money_flag": false },
+        { "id": "D12-2", "q": "What were the roles of the three Principal Recipients?", "a": "Each ran a different operating model, and the model shaped delivery. NACA was the financial Principal Recipient managing the largest and most complex national portfolio. NTBLCP provided a specialised pathway linked to the national TB programme, distributing implementation risk and accelerating technical interventions. Lagos ran a single-state, single-tier portfolio with no sub-recipients, using pre-existing units. The three are assessed separately, never blended.", "money_flag": false },
+        { "id": "D12-3", "q": "What worked, and what slowed delivery down?", "a": "Budgeting matured well, shifting deliberately from short-term emergency commodities toward durable health-security assets, and fiduciary compliance remained robust. The main constraint on timeliness was the grant's operating arrangements: procurement and payment processes delayed almost every activity line. A downsized programme management unit, with roughly five finance staff reviewing nearly twenty implementers and no dedicated compliance officer, compounded this.", "money_flag": false },
+        { "id": "D12-4", "q": "What is the evaluation's verdict on programme management?", "a": "The central message is not that one institution should have held the grant, nor that any recipient caused the delays. It is that emergency financing requires alignment between fiduciary safeguards, operational authority, workforce capacity and implementation timelines, and that where these separate, even high-absorbing investments arrive late. Lagos illustrates alignment, but is not a like-for-like template for the national recipients.", "money_flag": false },
+        { "id": "D12-5", "q": "What is at risk now, and what needs to happen next?", "a": "Gains rest on people more than on posts. Physical infrastructure is durable where maintenance is financed, but skills often sit with embedded individuals rather than established positions, and platforms depend on continued support. Allowance rates covering only about 40 to 50 per cent of market cost were linked to declined invitations, delayed mobilisation and weaker field verification.", "money_flag": false }
       ]
     },
     "D13": {
       "label": "Workforce, quality & catalysed investments",
       "q": [
-        { "id": "D13-1", "q": "What workforce and quality investment was delivered?", "a": null, "money_flag": false },
-        { "id": "D13-2", "q": "How many health workers were trained, and where?", "a": null, "money_flag": false },
-        { "id": "D13-3", "q": "What changed in quality of care and integration?", "a": null, "money_flag": false },
-        { "id": "D13-4", "q": "What is the evaluation's verdict on this area?", "a": null, "money_flag": false },
-        { "id": "D13-5", "q": "What is at risk now, and what needs to happen next?", "a": null, "money_flag": false }
+        { "id": "D13-1", "q": "What workforce and quality investment was delivered?", "a": "73,203 training instances across the portfolio, an aggregate count rather than unique headcount, spanning eight workforce streams each financed through its home intervention. This included 12,534 frontline workers trained and 700 biomedical engineers. Quality improvement was delivered as a systems-strengthening intervention rather than a stand-alone project.", "money_flag": false },
+        { "id": "D13-2", "q": "How many health workers were trained, and where?", "a": "Health-worker training reached all 37 jurisdictions. A biomedical-engineer cascade trained 202 engineers across 90 facilities in 21 states. On the data side, 2,524 facility staff were trained on national health-information tools in five weaker-reporting states, 132 local-government monitoring officers on analytics across six states, and 23 states were supported on data-quality assessment.", "money_flag": false },
+        { "id": "D13-3", "q": "What changed in quality of care and integration?", "a": "The quality-improvement programme trained 2,844 health workers in integrated quality improvement and reached 821 facilities across 44 local government areas in three states. In supported facilities, tuberculosis screening uptake rose from 28 per cent to 98 per cent, a 70-point gain. Integration of HIV, TB, malaria and COVID services aligned with the national move toward integrated, differentiated delivery.", "money_flag": false },
+        { "id": "D13-4", "q": "What is the evaluation's verdict on this area?", "a": "This module distinguishes three relationships: concurrent investments that ran alongside C19RM, complementary ones deliberately aligned with it, and catalysed ones financed from within the grant through reprogramming and savings. Catalysed is the smallest category but the most directly linked to C19RM. Quality improvement is the clearest documented example, where C19RM scaled an existing pilot rather than creating the programme.", "money_flag": false },
+        { "id": "D13-5", "q": "What is at risk now, and what needs to happen next?", "a": "The workforce is the operating base of the legacy, and it is a training footprint rather than a budget line. Surveillance officers, laboratory scientists, biomedical engineers, IPC focal persons, data officers and emergency managers must be retained, supervised and refreshed, with training shifting from one-off events to continuous competency management. Technical assistance should be tied to institutional strengthening with clear handover.", "money_flag": false }
       ]
     }
-  },
-  "open_questions_for_review": [
-    "D11 carries only 4 passages in the knowledge base and is absent from the chapter crosswalk. Confirm whether it is a live dashboard module; if so it needs its own five, if not it should be removed from the module map.",
-    "D07 is absent from the dashboard module dictionary. Confirm this is intentional.",
-    "D03 covers both RCCE and Community Systems, which were separate report chapters sharing one D-code. Five questions may be tight for both; consider splitting if the dashboard treats them separately."
-  ]
+  }
 }
