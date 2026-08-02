@@ -1815,7 +1815,7 @@ body.ox-focus .nd-plant{stroke-width:1.2}
  <div class="chead"><div><div class="ctitle">C19RM Chatbot</div><div class="csub">Grounded in the report, EOP &amp; investment data</div></div><button class="cx" onclick="toggleChat()" aria-label="Close">×</button></div>
  <div class="cbody" id="cbody"><div class="cmsg bot">Hello, I'm the C19RM Chatbot. Ask me anything about the C19RM evaluation: what was delivered and where, the findings by module, or how the assessment was done.</div></div>
  <div class="cfoot"><input id="cin" type="text" placeholder="Type your question…" onkeydown="if(event.key===\'Enter\')cSend()"><button id="csend" onclick="cSend()" aria-label="Send">→</button></div>
- <div class="cnote">AI-generated from the evaluation; please verify against the full report.</div>
+ <div class="cnote">Answers come from verified findings in the impact evaluation and end-of-project report.</div>
 </div>
 <div class="wlmodal" id="wlmodal" aria-hidden="true">
  <div class="wlback" onclick="closeWaitlist()"></div>
@@ -4643,10 +4643,9 @@ function faqRow(items,fn,heading){var body=document.getElementById('cbody');
  body.appendChild(w);body.scrollTop=1e9;return w;}
 function faqClear(){Array.prototype.slice.call(document.querySelectorAll('#cbody .faqchips,#cbody .faqhead')).forEach(function(n){n.remove();});}
 function faqGreet(){if(FAQ_STATE!=='idle')return;FAQ_STATE='greeted';
- /* the static greeting already sits in the panel markup - do not repeat it */
- faqLoad().then(function(f){if(!f)return;var m=faqOpenModule();
-  if(m&&f.modules&&f.modules[m]&&faqOK(f.modules[m].q).length)return faqShowModule(m);
-  faqShowPicker();});}
+ /* The chip picker was removed at the owner's request: people type their own
+    question and the local engine matches it. The static greeting in the panel
+    markup is the whole opener. */}
 function faqShowPicker(){faqClear();FAQ_STATE='picking';if(!FAQ)return;
  var any=false;
  cAdd('bot','Which investment would you like to ask about? You can also type your own question.');
